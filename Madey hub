@@ -1,0 +1,71 @@
+-- Creating ScreenGui 
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "HubUI"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create a frame as a background 
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.3, 0, 0.5, 0)  -- Size 30% width and 50% height of the screen
+frame.Position = UDim2.new(0.35, 0, 0.25, 0)  -- Centered on the screen
+frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)  -- Gray background color
+frame.Parent = screenGui
+
+-- Create the close button
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0.2, 0, 0.1, 0)  -- Size 20% width and 10% height of the frame
+closeButton.Position = UDim2.new(0.8, 0, 0, 0)  -- Positioned in the top right corner of the frame
+closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)  -- Red button color
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
+closeButton.Text = "Close"
+closeButton.Parent = frame
+
+-- Create the credit label
+local creditLabel = Instance.new("TextLabel")
+creditLabel.Size = UDim2.new(0.8, 0, 0.1, 0)  -- Size 80% width and 10% height of the frame
+creditLabel.Position = UDim2.new(0.1, 0, 0, 0)  -- Positioned at the top of the frame
+creditLabel.BackgroundColor3 = Color3.fromRGB(50, 50, 50)  -- Same color as the background
+creditLabel.TextColor3 = Color3.fromRGB(255, 255, 255)  -- White text color
+creditLabel.Text = "Credit: Cello Indonesia"
+creditLabel.TextScaled = true
+creditLabel.TextStrokeTransparency = 0.5
+creditLabel.TextXAlignment = Enum.TextXAlignment.Center  -- Center text horizontally
+creditLabel.TextYAlignment = Enum.TextYAlignment.Center  -- Center text vertically
+creditLabel.Parent = frame
+
+-- Create a button template
+local function createButton(buttonText, buttonPosition)
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(0.8, 0, 0.15, 0)  -- Size 80% width and 15% height of the frame
+    button.Position = buttonPosition  -- Dynamic position
+    button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  -- White button color
+    button.TextColor3 = Color3.fromRGB(0, 0, 0)  -- Black text color for better visibility on white background
+    button.TextScaled = true  -- Scale text to fit the button
+    button.Text = buttonText
+    button.Parent = frame
+    return button
+end
+
+-- Create the buttons with same size and position them correctly
+local button1 = createButton("madey hub v3", UDim2.new(0.1, 0, 0.2, 0))
+local button2 = createButton("madey hub v2", UDim2.new(0.1, 0, 0.4, 0))
+local button3 = createButton("madey hub v1", UDim2.new(0.1, 0, 0.6, 0))
+
+-- Run the first script when the first button is clicked
+button1.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/YuEcYtm7"))()  -- Script 1
+end)
+
+-- Run the second script when the second button is clicked
+button2.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/bJs6X3Fy"))()  -- Replace with your second script URL
+end)
+
+-- Run the third script when the third button is clicked
+button3.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/Lxtmneq1"))()  -- Replace with your third script URL
+end)
+
+-- Hide or remove the ScreenGui when the close button is clicked
+closeButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()  -- Removes the entire ScreenGui from the PlayerGui
+end)
