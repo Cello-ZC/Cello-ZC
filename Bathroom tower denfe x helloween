@@ -1,0 +1,14 @@
+-- Combined Script with Notification 
+
+-- Notifikasi
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Welcome";
+    Text = "This script is made by Cello";
+    Duration = 1;
+})
+
+-- Script 1
+loadstring(game:HttpGet("https://pastebin.com/raw/i2fzcGwn"))()
+
+-- Script 2
+loadstring(game:HttpGet("https://pastebin.com/raw/ecaN13Rd"))()
